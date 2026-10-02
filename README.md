@@ -2,102 +2,140 @@
 
 ### AI-Powered Career Intelligence Platform
 
-Viraja is a career intelligence platform designed to help students and job seekers **analyze their skills, compare resumes with job descriptions, identify skill gaps, improve career readiness, prepare for interviews, and track job applications**.
+**Viraja** is an AI-powered career intelligence platform designed to help students and job seekers understand their career readiness, analyze resumes, compare profiles against job descriptions, identify skill gaps, prepare for interviews, and track job applications — all in one place.
 
-> **Status:** 🚧 In Development
-> **Deployment:** Coming Soon
+Instead of providing generic career advice, Viraja aims to connect a user's **resume, skills, target roles, learning roadmap, interview preparation, and job-search activity** into a single career intelligence system.
+
+> **Status:** 🟢 Live & Continuously Improving
+> **Deployment:** Render
+> **AI:** Google Gemini
+> **Backend:** FastAPI
+> **Database:** PostgreSQL
 
 ---
 
-## 🎯 What is Viraja?
+## 🌐 Live Demo
 
-Finding the right career path is difficult when you don't know:
+### 🚀 Try Viraja
 
-* Which skills a job actually requires
-* How well your resume matches a job description
+**Live Application:**
+https://viraja.onrender.com
+
+**GitHub Repository:**
+https://github.com/Shrikrishna2003/Viraja
+
+> The application is currently deployed on Render's free infrastructure and may take some time to wake up after periods of inactivity.
+
+---
+
+# 🎯 What is Viraja?
+
+Finding the right career path can be difficult when you don't know:
+
+* Which skills a target job actually requires
+* How closely your resume matches a job description
 * Which skills you're missing
 * What you should learn next
 * Whether your resume is strong enough
 * What interview questions you should prepare for
-* How to keep track of your job applications
+* How your job applications are progressing
 
 Viraja brings these activities together into one platform.
 
-The current system focuses on **resume analysis, job-description matching, skill-gap identification, interview preparation, career guidance, and application tracking**.
+The current platform focuses on:
+
+**Resume Analysis → Job Matching → Skill Gap Analysis → Learning Roadmap → Interview Preparation → AI Career Coaching → Application Tracking**
 
 ---
 
-## ✨ Current Features
+# ✨ Core Features
 
-### 📄 Resume Analysis
+## 📄 Resume Analysis
 
-Analyze a resume and identify important information such as:
+Viraja analyzes resume content and identifies important career information such as:
 
 * Resume sections
-* Skills
+* Technical skills
 * Education
 * Experience
 * Projects
 * Certifications
-* Missing contact information
-* Weak resume bullet points
+* Contact information
+* Resume weaknesses
+* Weak bullet-point openings
 
-Viraja also identifies weak bullet-point openings and suggests improving them with stronger action-oriented language.
+Viraja can also identify weak resume bullets and suggest stronger, more action-oriented wording.
 
 ---
 
-### 🎯 Resume & Job Description Matching
+## 🎯 Resume & Job Description Matching
 
-Compare your resume against a job description and generate:
+Compare a resume against a specific job description to understand how closely the candidate matches the opportunity.
+
+Viraja provides information such as:
 
 * Match score
 * Matched skills
 * Missing skills
 * Required skills
 * Preferred skills
-* Required years of experience
+* Required experience
+* Skill-level gaps
 
-This helps users understand how closely their current profile matches a specific opportunity.
+The goal is to help users understand **why** they match or don't match a particular role rather than simply providing a score.
 
 ---
 
-### 📊 Skill Gap Analysis
+## 📊 Skill Gap Intelligence
 
-Viraja identifies skills requested by a job description that are not present in the resume.
+Viraja extracts skills from job descriptions and compares them against the user's resume.
 
-The system categorizes job-description skills as:
+Skills can be categorized as:
 
 * **Required**
 * **Preferred**
+* **Matched**
+* **Missing**
 
-and calculates a weighted match score based on those requirements.
+The system uses weighted requirements to calculate a more meaningful job-match score.
 
----
-
-### 📚 Personalized Skill Roadmap
-
-When a skill is missing, Viraja can provide a learning direction for that skill.
-
-Examples include:
-
-* Docker → Containerize an existing application
-* AWS → Deploy an application and learn basic AWS services
-* FastAPI → Rebuild a Flask API using FastAPI
-* Kubernetes → Practice pods, deployments and services
-* Redis → Add caching or rate limiting
-* CI/CD → Create a GitHub Actions workflow
-* Testing → Add automated tests
-* React → Build a CRUD frontend
-* PostgreSQL → Practice migration, joins and indexes
-* Data Structures → Practice problems by topic
+This allows users to identify the most important areas they need to improve before applying or interviewing.
 
 ---
 
-### 🎤 Interview Preparation
+## 📚 Personalized Skill Roadmap
 
-Viraja generates interview questions based on skills detected from the resume and job description.
+When Viraja identifies a missing skill, it can provide a practical learning direction.
 
-The current system includes questions for technologies and concepts such as:
+Examples:
+
+| Skill           | Suggested Direction                               |
+| --------------- | ------------------------------------------------- |
+| Docker          | Containerize an existing application              |
+| AWS             | Deploy an application and learn core AWS services |
+| FastAPI         | Rebuild an existing API using FastAPI             |
+| Kubernetes      | Practice pods, deployments, and services          |
+| Redis           | Add caching or rate limiting                      |
+| CI/CD           | Build a GitHub Actions workflow                   |
+| Testing         | Add automated tests to an existing project        |
+| React           | Build a CRUD application                          |
+| PostgreSQL      | Practice migrations, joins, and indexes           |
+| Data Structures | Practice problems topic-by-topic                  |
+
+The long-term goal is to turn skill gaps into **actionable learning plans**.
+
+---
+
+# 🎤 Interview Preparation
+
+Viraja generates interview questions based on skills detected from:
+
+* The user's resume
+* The target job description
+* Missing skills
+* Technical requirements
+
+Current interview preparation covers areas such as:
 
 * Python
 * Flask
@@ -115,31 +153,41 @@ The current system includes questions for technologies and concepts such as:
 * HTML
 * CSS
 
-It can also generate questions around missing skills to help users prepare for technologies requested by the job.
+Viraja can also generate questions around missing skills so users can prepare for technologies requested by the target role.
 
 ---
 
-### 🤖 Krish Career Coach
+# 🤖 Krish — AI Career Coach
 
 Viraja includes **Krish**, an AI-powered career coaching component.
 
-Krish can work with career-related information such as:
+Krish can use career-related context such as:
 
+* Resume analysis
+* Job-description analysis
 * Resume/JD match results
 * Matched skills
 * Missing skills
 * Resume weaknesses
-* Job applications
 * Learning recommendations
+* Job applications
 * Interview preparation
 
-> AI-powered functionality requires the appropriate API configuration.
+This allows career conversations to be based on the user's actual career data instead of completely generic advice.
+
+### Powered by Google Gemini
+
+Viraja currently supports Gemini as its AI provider.
+
+AI functionality requires the appropriate API configuration.
 
 ---
 
-### 💼 Job Application Tracking
+# 💼 Job Application Tracking
 
-Users can save and manage job applications with information such as:
+Users can save and manage their job applications.
+
+Application information can include:
 
 * Company
 * Job role
@@ -148,13 +196,27 @@ Users can save and manage job applications with information such as:
 * Skill gaps
 * Application status
 
-Application statuses can be updated as the recruitment process progresses.
+Applications can be updated as they move through the recruitment process.
+
+Example workflow:
+
+```text
+Applied
+   ↓
+Shortlisted
+   ↓
+Interview
+   ↓
+Offer
+```
 
 ---
 
-### 📈 Application Statistics
+# 📈 Application Analytics
 
-Viraja provides application statistics including information such as:
+Viraja provides an overview of the user's job-search activity.
+
+Analytics include information such as:
 
 * Total applications
 * Application status counts
@@ -163,13 +225,13 @@ Viraja provides application statistics including information such as:
 * Top skills
 * Top skill gaps
 
-This gives users a simple overview of their job-search activity.
+This helps users understand patterns in their job search and identify areas that may need improvement.
 
 ---
 
-### 🔐 Authentication & Security
+# 🔐 Authentication & Security
 
-Viraja includes user authentication features such as:
+Viraja includes authentication and access-control functionality such as:
 
 * User registration
 * Login
@@ -178,47 +240,24 @@ Viraja includes user authentication features such as:
 * Password reset flow
 * Protected application data
 * User-specific application access
+* Login rate limiting
 
-The application also includes login rate limiting and secure session-cookie configuration.
+Session cookies are configured with security-oriented settings including:
 
----
+* `HttpOnly`
+* `SameSite=Lax`
 
-## 🛠️ Technology Stack
+Sensitive configuration such as API keys, database credentials, and secret keys is handled through environment variables rather than being committed to the repository.
 
-### Backend
-
-* Python
-* Flask
-
-### Frontend
-
-* HTML
-* CSS
-* JavaScript
-
-### AI
-
-* Anthropic API integration
-* AI-powered career coaching
-
-### Data & Analysis
-
-* Resume text extraction
-* Skill detection
-* Job-description analysis
-* Weighted skill matching
-
-### Development
-
-* Git
-* GitHub
-* VS Code
+> Viraja is an evolving project and should undergo additional security review before being considered production-ready for sensitive or large-scale usage.
 
 ---
 
-## 🧠 Skill Intelligence
+# 🧠 Skill Intelligence Engine
 
-Viraja contains a broad skill dictionary covering areas including:
+Viraja contains a broad skill dictionary covering multiple areas of software development and technology.
+
+Examples include:
 
 ```text
 Python
@@ -228,94 +267,185 @@ TypeScript
 C++
 C#
 Go
+
 HTML
 CSS
 React
 Angular
 Vue
 Node.js
+
 Flask
 Django
 FastAPI
 Spring Boot
+
 SQL
 MySQL
 PostgreSQL
 MongoDB
 Redis
 SQLite
+
 REST APIs
 GraphQL
+
 Git
 Docker
 Kubernetes
+
 AWS
 Azure
 GCP
 Linux
 CI/CD
+
 Testing
 Data Structures
 OOP
+
 Pandas
 NumPy
 Machine Learning
+
 Microservices
 Kafka
 Jira
+
 LLMs
 LangChain
 RAG
 NLP
 Deep Learning
+
 Power BI
 Tableau
 Spark
 Airflow
+
 System Design
 Design Patterns
 ```
 
-The skill engine can recognize multiple variations and aliases of technologies.
+The skill engine is designed to recognize different variations and aliases of technologies.
 
 ---
 
-## 📁 Project Structure
+# 🏗️ Architecture
+
+At a high level, Viraja follows a simple web application architecture:
 
 ```text
-Viraja/
-│
-├── main.py
-├── skills.py
-├── smoke_test.py
-├── requirements.txt
-├── .env.example
-├── INTERVIEW_NOTES.md
-├── README.md
-│
-└── public/
-    └── index.html
+                   ┌─────────────────────┐
+                   │      User / Browser  │
+                   └──────────┬──────────┘
+                              │
+                              ▼
+                   ┌─────────────────────┐
+                   │   HTML / CSS / JS   │
+                   │     Frontend        │
+                   └──────────┬──────────┘
+                              │
+                              ▼
+                   ┌─────────────────────┐
+                   │       FastAPI       │
+                   │      Backend        │
+                   └──────┬──────┬───────┘
+                          │      │
+              ┌───────────┘      └────────────┐
+              ▼                               ▼
+     ┌─────────────────┐             ┌─────────────────┐
+     │ PostgreSQL      │             │  Gemini AI      │
+     │ Database        │             │  AI Services    │
+     └─────────────────┘             └─────────────────┘
 ```
 
 ---
 
-## ⚙️ Getting Started
+# 🛠️ Technology Stack
 
-### 1. Clone the repository
+## Backend
+
+* Python
+* FastAPI
+* Uvicorn
+* SQLAlchemy
+* PostgreSQL
+
+## Frontend
+
+* HTML
+* CSS
+* JavaScript
+
+## AI
+
+* Google Gemini API
+
+## Data & Intelligence
+
+* Resume text analysis
+* Skill extraction
+* Job-description analysis
+* Weighted skill matching
+* Skill-gap detection
+* Interview question generation
+* Career recommendations
+
+## Authentication & Security
+
+* Session-based authentication
+* Secure cookies
+* Password hashing
+* Rate limiting
+* Environment-based secrets
+
+## Development & Deployment
+
+* Git
+* GitHub
+* VS Code
+* Render
+* Neon PostgreSQL
+
+---
+
+# 📁 Project Structure
+
+```text
+Viraja/
+│
+├── main.py                  # FastAPI application
+├── skills.py                # Skill dictionary and skill intelligence
+├── smoke_test.py            # End-to-end application tests
+├── requirements.txt         # Python dependencies
+├── .env.example             # Environment variable template
+├── INTERVIEW_NOTES.md       # Interview preparation notes
+├── README.md                # Project documentation
+│
+└── public/
+    └── index.html           # Frontend application
+```
+
+---
+
+# ⚙️ Getting Started
+
+## 1. Clone the repository
 
 ```bash
 git clone https://github.com/Shrikrishna2003/Viraja.git
 ```
 
-### 2. Enter the project directory
+## 2. Enter the project directory
 
 ```bash
 cd Viraja
 ```
 
-### 3. Create a virtual environment
+## 3. Create a virtual environment
 
-#### Windows
+### Windows
 
 ```bash
 python -m venv venv
@@ -327,7 +457,7 @@ Activate it:
 venv\Scripts\activate
 ```
 
-#### macOS / Linux
+### macOS / Linux
 
 ```bash
 python3 -m venv venv
@@ -341,7 +471,7 @@ source venv/bin/activate
 
 ---
 
-### 4. Install dependencies
+## 4. Install dependencies
 
 ```bash
 pip install -r requirements.txt
@@ -349,33 +479,59 @@ pip install -r requirements.txt
 
 ---
 
-### 5. Configure environment variables
+## 5. Configure environment variables
 
-Create a `.env` file using `.env.example` as your reference.
+Create a `.env` file based on `.env.example`.
+
+Example configuration structure:
+
+```env
+DATABASE_URL=your_database_url
+SECRET_KEY=your_secret_key
+
+AI_PROVIDER=gemini
+AI_API_KEY=your_gemini_api_key
+```
+
+Use your own values for each variable.
+
+### ⚠️ Important
+
+Never commit:
 
 ```text
-.env.example
+.env
+API keys
+Database passwords
+Secret keys
+Authentication tokens
 ```
 
-Add the required configuration for the services used by your local environment.
+to GitHub.
 
-**Never upload API keys, passwords, tokens, or other secrets to GitHub.**
+The repository should contain `.env.example`, not your real `.env`.
 
 ---
 
-### 6. Run Viraja locally
+# ▶️ Running Viraja Locally
+
+Start the application with:
 
 ```bash
-python main.py
+uvicorn main:app --reload
 ```
 
-Then open the local URL provided by the application in your browser.
+Then open the local URL shown by Uvicorn, normally:
+
+```text
+http://127.0.0.1:8000
+```
 
 ---
 
-## 🧪 Testing
+# 🧪 Testing
 
-Viraja includes an end-to-end smoke test covering important application functionality.
+Viraja includes an end-to-end smoke test for important application functionality.
 
 Run:
 
@@ -383,7 +539,7 @@ Run:
 python smoke_test.py
 ```
 
-The test checks areas including:
+The test covers areas including:
 
 * User signup
 * Duplicate signup protection
@@ -402,7 +558,7 @@ The test checks areas including:
 * Invalid reset-token handling
 * Logout/session clearing
 
-A successful run ends with:
+A successful test run ends with:
 
 ```text
 ALL PASSED
@@ -410,26 +566,47 @@ ALL PASSED
 
 ---
 
-## 🔒 Security Considerations
+# 🚀 Deployment
 
-Viraja is designed with basic application security controls including:
+Viraja is currently deployed using:
 
-* Password-based authentication
-* Session-based access control
-* HttpOnly session cookies
-* SameSite cookie protection
-* Login rate limiting
-* User-specific application access
-* Protected API endpoints
-* Environment-variable based secret configuration
+### Application Hosting
 
-This project is still under development and should undergo additional security review before production use.
+**Render**
+
+### Database
+
+**Neon PostgreSQL**
+
+### AI Provider
+
+**Google Gemini**
+
+### Source Control
+
+**GitHub**
+
+### Production Start Command
+
+```bash
+uvicorn main:app --host 0.0.0.0 --port $PORT
+```
+
+### Production Build Command
+
+```bash
+pip install -r requirements.txt
+```
+
+### Live Application
+
+https://viraja.onrender.com
 
 ---
 
-## 🗺️ Roadmap
+# 🗺️ Roadmap
 
-### Phase 1 — Core Career Intelligence
+## Phase 1 — Core Career Intelligence
 
 * [x] Resume analysis
 * [x] Job description analysis
@@ -441,9 +618,12 @@ This project is still under development and should undergo additional security r
 * [x] Job application tracking
 * [x] Application statistics
 * [x] Authentication
-* [x] Krish career coaching
+* [x] Krish AI career coaching
+* [x] Cloud deployment
 
-### Phase 2 — Advanced Career Intelligence
+---
+
+## Phase 2 — Advanced Career Intelligence
 
 * [ ] Advanced AI career recommendations
 * [ ] Multi-role career comparison
@@ -451,8 +631,11 @@ This project is still under development and should undergo additional security r
 * [ ] Improved skill-gap intelligence
 * [ ] More advanced interview preparation
 * [ ] Better resume improvement recommendations
+* [ ] Deeper career-readiness analysis
 
-### Phase 3 — Career Platform
+---
+
+## Phase 3 — Career Platform
 
 * [ ] Job-role recommendation engine
 * [ ] Job matching
@@ -460,79 +643,181 @@ This project is still under development and should undergo additional security r
 * [ ] Career progress tracking
 * [ ] Advanced interview simulator
 * [ ] User dashboard improvements
+* [ ] Career opportunity discovery
 
-### Phase 4 — Production Platform
+---
 
-* [ ] Production deployment
-* [ ] Production database
+## Phase 4 — Career Intelligence Ecosystem
+
+* [ ] Real-time job intelligence
+* [ ] Personalized opportunity recommendations
+* [ ] Intelligent application prioritization
+* [ ] Advanced career analytics
+* [ ] Learning-resource integration
+* [ ] Career progression tracking
+* [ ] Mobile experience
 * [ ] Scalable infrastructure
-* [ ] Mobile optimization
-* [ ] Improved observability and monitoring
+* [ ] Advanced observability and monitoring
 
 ---
 
-## 🌐 Deployment
+# 🔮 Vision
 
-Viraja is **currently not deployed**.
+The long-term vision of Viraja is to make career development more **personalized, practical, measurable, and data-driven**.
 
-The application is being developed and tested locally before production deployment.
+Instead of simply telling users:
 
-> **Live Application:** Coming Soon 🚀
+> "Learn Python."
 
----
-
-## 🔮 Vision
-
-The long-term vision of Viraja is to make career development more **personalized, practical, and data-driven**.
-
-Instead of giving users generic career advice, Viraja aims to help answer:
+Viraja aims to answer:
 
 ```text
 Where am I now?
         ↓
-What does my target role require?
+What role am I targeting?
+        ↓
+What does that role require?
+        ↓
+How well does my profile match?
         ↓
 What skills am I missing?
         ↓
-What should I learn next?
+What should I learn first?
         ↓
-How ready am I?
+How can I improve my resume?
         ↓
-How should I prepare?
+How should I prepare for the interview?
         ↓
-What opportunities should I pursue?
+Which opportunities should I pursue?
+        ↓
+How is my career progress changing?
 ```
 
-The goal is to continuously connect a user's **skills, resume, career goals, learning path, interview preparation, and job applications** in one platform.
+The goal is to continuously connect:
+
+**Skills + Resume + Career Goals + Learning + Interview Preparation + Job Applications**
+
+into one intelligent career platform.
 
 ---
 
-## 👨‍💻 Developer
+# 🌱 Why Viraja?
 
-### Shrikrishna Tippanna Mokhashi
+Most career tools focus on only one part of the journey.
+
+```text
+Resume Tools
+      │
+      ├── Resume building
+      │
+Job Platforms
+      │
+      ├── Job discovery
+      │
+Learning Platforms
+      │
+      ├── Skill development
+      │
+Interview Platforms
+      │
+      └── Interview preparation
+```
+
+Viraja aims to connect these stages into a single career intelligence workflow:
+
+```text
+                 ┌───────────────┐
+                 │     RESUME    │
+                 └───────┬───────┘
+                         ↓
+                 ┌───────────────┐
+                 │  TARGET ROLE  │
+                 └───────┬───────┘
+                         ↓
+                 ┌───────────────┐
+                 │ MATCH ANALYSIS│
+                 └───────┬───────┘
+                         ↓
+                 ┌───────────────┐
+                 │   SKILL GAP   │
+                 └───────┬───────┘
+                         ↓
+                 ┌───────────────┐
+                 │ LEARNING PATH │
+                 └───────┬───────┘
+                         ↓
+                 ┌───────────────┐
+                 │  INTERVIEW    │
+                 │ PREPARATION   │
+                 └───────┬───────┘
+                         ↓
+                 ┌───────────────┐
+                 │ APPLICATIONS  │
+                 └───────┬───────┘
+                         ↓
+                 ┌───────────────┐
+                 │ CAREER DATA   │
+                 └───────────────┘
+```
+
+This is the direction Viraja is being built toward.
+
+---
+
+# 📊 Project Status
+
+```text
+🟢 Core Features        Available
+🟢 AI Career Coach      Available
+🟢 Authentication       Available
+🟢 Application Tracker Available
+🟢 PostgreSQL Database  Connected
+🟢 Cloud Deployment     Live
+🟢 GitHub Repository    Available
+🟡 Advanced Features    In Development
+🟡 Career Platform      Planned
+```
+
+Viraja is an evolving project. The architecture, features, and roadmap may continue to change as the platform develops.
+
+---
+
+# 👨‍💻 Developer
+
+## Shrikrishna Tippanna Mokhashi
 
 Computer Science Engineering
+
 Python Full Stack Developer • Software Developer Aspirant
 
-GitHub:
+### GitHub
 
 https://github.com/Shrikrishna2003
 
----
+### Project
 
-## 📌 Project Status
-
-```text
-🟡 Development
-🧪 Testing
-🚧 Deployment Pending
-🔬 Continuous Improvement
-```
-
-Viraja is an evolving project. Features, architecture, and roadmap items may change as development continues.
+https://github.com/Shrikrishna2003/Viraja
 
 ---
 
-## 📄 License
+# ⭐ Support the Project
+
+If you find Viraja interesting or useful:
+
+* ⭐ Star the repository
+* 🍴 Fork the project
+* 🐛 Report issues
+* 💡 Suggest features
+* 🔧 Contribute improvements
+
+---
+
+# 📄 License
 
 License information will be added as the project approaches its public release.
+
+---
+
+## 🚀 Built with curiosity, AI, and a goal to make career development smarter.
+
+**Viraja — From skills to opportunities.**
