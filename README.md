@@ -1,45 +1,276 @@
-# VIRAJA
+# 🚀 Viraja
 
-Match your resume to any job, see the skill gaps, and track every application. **Krish** is the built-in career coach.
+### AI-Powered Career Intelligence Platform
 
-## Run locally
-    pip install -r requirements.txt
-    python -m uvicorn main:app --reload
-Open http://127.0.0.1:8000
+Viraja is an AI-powered career intelligence platform designed to help students and job seekers understand their career options, identify skill gaps, prepare for opportunities, and build a practical path toward their career goals.
 
-## Settings (.env)
-Copy `.env.example` to `.env` and fill it in. Restart the server after changing it.
+> **Status:** 🚧 In Development
+> **Deployment:** Coming Soon
 
-| Name | Purpose |
-|---|---|
-| `SECRET_KEY` | Random 32+ character string that signs sessions. Required in production. Generate: `python -c "import secrets;print(secrets.token_urlsafe(48))"` |
-| `DATABASE_URL` | Postgres URL (Neon/Supabase). SQLite is used if unset. Required on Vercel. |
-| `BASE_URL` | Public site URL, used in reset links (e.g. https://your-app.vercel.app). |
-| `SMTP_HOST` `SMTP_PORT` `SMTP_USER` `SMTP_PASS` `SMTP_FROM` | Sends reset emails (587 STARTTLS or 465 SSL). |
-| `AI_PROVIDER` `AI_API_KEY` `AI_MODEL` | Free AI for Krish: `gemini`, `groq`, `openrouter` or `ollama`. |
-| `ANTHROPIC_API_KEY` | Alternative: Claude for Krish's AI mode. |
+---
 
-Without SMTP settings, running locally shows the reset link on screen instead of emailing it.
+## 🎯 What is Viraja?
 
-## Krish
-Basic coaching (red/amber/green summary, recommendations, 7-day focus) needs no key. With an AI provider set, the AI button runs a tool-calling loop (`get_match_analysis`, `get_application_history`, `get_learning_resource`, `get_interview_questions`), then writes bullet rewrites and a 7-day plan.
+Choosing a career path can be confusing. Students often struggle with questions like:
 
-## Security
-- Argon2id password hashing; older hashes upgrade at next login.
-- Session in an `HttpOnly`, `SameSite=Lax` cookie (`Secure` in production), never in `localStorage`.
-- Login and reset-request rate limiting (in memory; use Redis for multi-instance production).
-- Every query is scoped to the signed-in user.
-- The app refuses to start in production without a 32+ character `SECRET_KEY`.
-- Never commit `.env`. If a key or password is ever shared, rotate it.
-- Not built: email verification, CSRF tokens, OCR for scanned PDFs (paste the text instead).
+* What career path should I choose?
+* Which skills are required for a particular role?
+* What should I learn next?
+* Am I ready for a specific job?
+* How can I prepare for interviews?
+* Which areas should I improve?
 
-## Test
-    python smoke_test.py                        # local server
-    python smoke_test.py https://your-site      # deployed site
-Covers signup, cookie flags, login, rate limiting, user isolation, tracker, stats, Krish, reset and logout. It does not upload a PDF.
+**Viraja aims to bring these career-related decisions into one intelligent platform.**
 
-## Deploy on Vercel
-1. Create a free Postgres on Neon or Supabase and copy its connection string.
-2. Push this folder to GitHub and import it on vercel.com. Vercel detects `main.py` and serves `public/index.html`.
-3. Add the environment variables above (`DATABASE_URL`, `SECRET_KEY`, `BASE_URL`, SMTP, AI settings).
-4. Deploy, then run the smoke test against your URL. Krish's AI mode can take 10 to 30 seconds, so check your function timeout.
+The long-term goal is to build a career intelligence system that understands a user's goals, skills, progress, and target roles and provides personalized guidance.
+
+---
+
+## ✨ Core Features
+
+### 🤖 AI Career Guidance
+
+Get personalized career guidance based on your goals, interests, and current skill set.
+
+### 🧭 Career Path Exploration
+
+Explore potential technology and career paths and understand the skills associated with different roles.
+
+### 📊 Skill Gap Analysis
+
+Identify the difference between your current skills and the skills required for your target career.
+
+### 📚 Personalized Learning Direction
+
+Understand what skills and technologies to focus on next instead of following a random learning path.
+
+### 💼 Job & Career Readiness
+
+Work toward becoming job-ready by identifying areas that require improvement.
+
+### 🎤 Interview Preparation
+
+Prepare for technical and career-related interviews with structured practice and guidance.
+
+---
+
+## 🛠️ Technology Stack
+
+### Backend
+
+* Python
+* Flask
+
+### Frontend
+
+* HTML
+* CSS
+* JavaScript
+
+### AI
+
+* AI-powered career analysis and guidance
+
+### Development Tools
+
+* Git
+* GitHub
+* VS Code
+
+---
+
+## 📁 Project Structure
+
+```text
+Viraja/
+│
+├── main.py
+├── skills.py
+├── smoke_test.py
+├── requirements.txt
+├── .env.example
+├── INTERVIEW_NOTES.md
+├── README.md
+│
+└── public/
+    └── index.html
+```
+
+---
+
+## ⚙️ Getting Started
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/Shrikrishna2003/Viraja.git
+```
+
+### 2. Navigate into the project
+
+```bash
+cd Viraja
+```
+
+### 3. Create a virtual environment
+
+Windows:
+
+```bash
+python -m venv venv
+```
+
+Activate it:
+
+```bash
+venv\Scripts\activate
+```
+
+macOS/Linux:
+
+```bash
+source venv/bin/activate
+```
+
+### 4. Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### 5. Configure environment variables
+
+Create a `.env` file based on:
+
+```text
+.env.example
+```
+
+Do not commit your `.env` file or API keys to GitHub.
+
+### 6. Run Viraja locally
+
+```bash
+python main.py
+```
+
+Then open the local address shown by the application in your browser.
+
+---
+
+## 🔐 Environment Variables
+
+Viraja may require environment variables for configuration and external services.
+
+Use:
+
+```text
+.env.example
+```
+
+as the template.
+
+**Never commit real API keys, passwords, tokens, or other secrets to GitHub.**
+
+---
+
+## 🧪 Testing
+
+A basic smoke test is included in the project.
+
+Run:
+
+```bash
+python smoke_test.py
+```
+
+---
+
+## 🗺️ Roadmap
+
+Viraja is currently under active development.
+
+### Phase 1 — Foundation
+
+* [x] Initial project structure
+* [x] Career-focused application foundation
+* [x] Basic frontend
+* [x] Python backend
+* [x] Skill-related functionality
+
+### Phase 2 — Intelligence
+
+* [ ] Advanced AI career recommendations
+* [ ] Personalized skill-gap analysis
+* [ ] Career roadmap generation
+* [ ] Improved recommendation system
+
+### Phase 3 — Career Intelligence
+
+* [ ] Job-role matching
+* [ ] Resume analysis
+* [ ] Interview preparation system
+* [ ] Personalized learning recommendations
+* [ ] Career readiness tracking
+
+### Phase 4 — Platform
+
+* [ ] User accounts
+* [ ] Personalized dashboards
+* [ ] Progress tracking
+* [ ] Production deployment
+* [ ] Mobile-friendly experience
+
+---
+
+## 🌐 Deployment
+
+Viraja is **not deployed yet**.
+
+Production deployment is planned after the core application is finalized and tested.
+
+> **Live application:** Coming soon 🚀
+
+---
+
+## 🎯 Vision
+
+The long-term vision of Viraja is to become an intelligent career platform that helps people move from:
+
+**"I don't know what to do."**
+
+to
+
+**"I know what I need to do next."**
+
+Viraja is being built around the idea that career guidance should be **personalized, practical, and continuously updated** rather than being limited to static career advice.
+
+---
+
+## 👨‍💻 Developer
+
+**Shrikrishna Tippanna Mokhashi**
+
+Computer Science Engineering
+Python Full Stack Developer • Software Developer Aspirant
+
+GitHub:
+https://github.com/Shrikrishna2003
+
+---
+
+## 📌 Project Status
+
+```text
+🟡 Development
+🚧 Deployment Pending
+🔬 Continuous Improvement
+```
+
+Viraja is an evolving project and its features, architecture, and roadmap may change as development progresses.
+
+---
+
+## 📄 License
+
+License information will be added as the project approaches its public release.
